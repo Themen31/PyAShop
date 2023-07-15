@@ -1,0 +1,64 @@
+<head>
+  <meta charset="utf-8">
+  <title>Mis Pedidos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+          <p class="breadcrumb" ><li class="breadcrumb-item title-carrito" >Lista de Compras</li>
+
+          </p>
+      </nav>
+
+      <div>
+          <table
+            mat-table
+            [dataSource]="dataSource"
+            matSort
+            class="mat-elevation-z8"
+            class="w-100"
+          >
+          <ng-container matColumnDef="nCompra" class="table">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>N° Compra</th>
+            <td mat-cell *matCellDef="let element" class="" text-align="center">{{ element.idCompra }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="importeTotal" class="table">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Monto Pagado</th>
+            <td mat-cell *matCellDef="let element" >S/ {{ element.montoPago.toFixed(2)}}</td>
+          </ng-container>
+          <ng-container matColumnDef="fechaCompra" class="table">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de Compra</th>
+              <td mat-cell *matCellDef="let element">{{ element.fechaCompra }}</td>
+            </ng-container>
+          <ng-container matColumnDef="estado" class="table">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Seguimiento de Compra</th>
+            <td mat-cell *matCellDef="let element" class="columnn">{{ element.estadoCompra.nombreEstado}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Recibo" class="table">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Recibo</th>
+            <td mat-cell *matCellDef="let element" class="columnn">
+              <button type="submit" (click)="sendIdCompra(element.idCompra)" data-bs-toggle="modal" data-bs-target="#exampleModal" mat-button><mat-icon>receipt</mat-icon></button>
+            </td>
+          </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+      </div>
+    </div>
+
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <app-modal-recibo #recibo [idCompra]=seleccion></app-modal-recibo>
+    </div>
+  </div>
+</div>

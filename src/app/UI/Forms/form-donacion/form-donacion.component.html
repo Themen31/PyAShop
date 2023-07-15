@@ -1,0 +1,46 @@
+<form (ngSubmit)="save()" autocomplete="off" [formGroup]="form" #frmLibro="ngForm" ><div class="p-3 mb-2 bg-secondary bg-opacity-10 border border-success">Puedes ingresar desde S/.0.1</div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text">s/.</span>
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" type="number" min="0.1" max="15" placeholder="Monto a Donar" formControlName="montoDonar" />
+    <span class="input-group-text">.00</span>
+  </div>
+
+
+
+
+      <div class="text-end">
+      <button mat-raised-button type="submit" class="btn btn-success" class="btn btn-success"  [disabled]="frmLibro.invalid">Donarㅤ <mat-icon>favorite</mat-icon></button>
+      </div>
+
+
+</form>
+
+    <!-- ----------------------------------- -->
+    <p>
+    </p>
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-inner border border-success">
+        <div class="carousel-item active border border-success">
+          <img src="https://www.powersinsurance.com/wp-content/uploads/sites/78/2018/02/Plant-a-tree-Ads-7-19-2017_AD-R2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.givelively.org/nonprofits/6f758d22-a6c8-40fa-9565-4741181b03ae/social_images/tree-trust_original_460ad41b4f37b4e7998f7218cc836fa150791b1a18a7de71be41f2e7df959ee3_social.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://treelia.org/wp-content/uploads/2020/05/Plant-a-tree-.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <p>
+
+    </p>
+     <!-- ----------------------------------- -->

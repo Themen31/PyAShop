@@ -1,0 +1,33 @@
+<div class="container" style="display: flex; justify-content: center; border: 1px solid black;">
+    <form (ngSubmit)="registrar()" autocomplete="off" [formGroup]="form" style="width: 100%;">
+      <section class="register-box" style="margin: 0 auto;">
+        <h1 class="cuenta1" style="margin-bottom: 0px;">Regístrate</h1>
+        <p class="informacion">Ingresa tus datos por favor</p>
+        <input type="email" formControlName="correoUsuario" class="form-control" placeholder="Correo Electrónico">
+        <div *ngIf="form.controls['correoUsuario'].errors?.['email']" class="danger">Debe ingresar un correo.</div>
+  
+        <input type="text" formControlName="nombreUsuario" class="form-control" placeholder="Nombre de Usuario">
+        <div *ngIf="form.controls['nombreUsuario'].errors?.['minlength']" class="danger">El nombre de usuario debe ser al menos de 3 caracteres.</div>
+        <div *ngIf="form.controls['nombreUsuario'].errors?.['maxlength']" class="danger">El nombre de usuario debe ser menor de 100 caracteres.</div>
+  
+        <input type="text" formControlName="direccionUsuario" class="form-control" placeholder="Dirección">
+  
+        <input type="text" formControlName="contrasenaUsuario" class="form-control" placeholder="Contraseña">
+        <div *ngIf="form.controls['contrasenaUsuario'].errors?.['minlength']" class="danger">La contraseña debe ser al menos de 6 caracteres.</div>
+        <div *ngIf="form.controls['contrasenaUsuario'].errors?.['maxlength']" class="danger">La contraseña debe ser menor de 25 caracteres.</div>
+  
+        <p class="danger">{{msg}}</p>
+        <input type="submit" value="Registrarse" class="submit-button">
+        <div class="inicio">
+          <p class="cuenta">Si ya eres cliente</p>
+        </div>
+        <a class="login" routerLink="../login" routerLinkActive="">Inicia Sesión</a>
+        <div style="text-align: center;">
+          <img class="logo" src="https://bmlicores.com/wp-content/uploads/2021/02/Promo-1.png" alt="PYASHOP" style="max-width: 85%; height: auto;">
+        </div>
+      </section>
+    </form>
+  </div>
+  
+
+  

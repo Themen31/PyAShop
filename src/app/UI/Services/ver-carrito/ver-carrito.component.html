@@ -1,0 +1,93 @@
+<app-modalito (onSubmit)="crearDonacion($event)"></app-modalito>
+<head>
+    <meta charset="utf-8">
+    <title>Producto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+
+  </head>
+  <body>
+      <div class="container">
+        <nav aria-label="breadcrumb">
+            <p class="breadcrumb" ><li class="breadcrumb-item title-carrito"  >Lista de Productos a comprar</li>
+            </p>
+        </nav>
+
+        <div>
+            <table
+              mat-table
+              [dataSource]="dataSource"
+              matSort
+              class="mat-elevation-z8"
+              class="w-100"
+            >
+            <ng-container matColumnDef="idProducto">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+              <td mat-cell *matCellDef="let element">{{ element.idProduct }}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="nombre_producto">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+              <td mat-cell *matCellDef="let element">{{ element.nombre_producto }}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="categoria_producto">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Categoria</th>
+              <td mat-cell *matCellDef="let element">{{ element.categoria_producto }}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="costo_producto">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Costo</th>
+                <td mat-cell *matCellDef="let element">{{ element.costo_producto }}</td>
+            </ng-container>
+
+              <ng-container matColumnDef="Eliminar">
+                <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+                <td mat-cell *matCellDef="let element">
+                  <button
+                    mat-button
+                    (click)="eliminarDelCarrito(element.idProduct)"
+                  >
+                  <mat-icon>remove_shopping_cart</mat-icon>
+
+                  </button>
+
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Precio" class="precio">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+                <td mat-cell *matCellDef="let element" >{{ (element.precioP).toFixed(2) }}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+
+            <div class=" total">
+                <div class="row" >
+                    <div class="total">
+                        <p>Monto Productos:   {{this.precioPro}}</p>
+                        <p>Costo Envio: {{this.delivery}}</p>
+                        <p>MONTO TOTAL: {{this.precioTotal}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 boton">
+                        <button type="button" font-family="Teko" font-size=90px class="btn btn-primary pagar" (click)="irPago()">Pagar</button>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+          </div>
+
+
+
+
+
+      </div>
+
+  </body>
+

@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <img class="logo" src="../../assets/netologo.png" alt="Lionshop">
+  <span>Cliente</span>
+
+  <div class="column-1-T">
+  </div>
+  <div class="column-2-I">
+  
+  <button mat-button class="ms-2" (click)="irProductos()">
+      Productos
+  </button>
+
+  <button mat-button class="ms-2" (click)="irCarrito()">
+    Mi Lista
+</button>
+
+<button mat-button class="ms-2" (click)="irCompras()">
+  Mis Compras
+</button>
+
+<button mat-button class="ms-2" (click)="irDonar()">
+  Donar
+</button>
+
+<button mat-button class="ms-2" (click)="irDonaciones()">
+  Mis Donaciones
+</button>
+
+  <button mat-button routerLink="/" class="ms-2">Cerrar Sesión</button>
+</div>
+
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="registrar-usuario.component.css">
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="row">
+        <div class="col-2">
+            <app-form-registrar-usuario (onSubmit)="registerUser($event)"></app-form-registrar-usuario>
+        </div>
+    </section>
+    <p class="danger">{{msg}}</p>
+</body>
+</html>

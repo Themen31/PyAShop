@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-md-offset-3 mx-auto">
+        <form
+          (ngSubmit)="save()"
+          autocomplete="off"
+          [formGroup]="form"
+          #frmLibro="ngForm"
+        >
+  
+            <mat-form-field appearance="outline" class="d-block">
+                <mat-label>Nombre Producto</mat-label>
+                <input 
+                  matInput
+                  type="text"
+                  placeholder="Nombre Producto"
+                  formControlName="nombre_producto"
+                />
+                <mat-error *ngIf="form.controls.nombre_producto.hasError('required')">
+                    Este Campo es obligatorio
+                </mat-error>
+                
+            </mat-form-field>
+        <!--
+            <mat-form-field appearance="outline" class="d-block">
+                <mat-label>Categoria Producto</mat-label>
+                <input 
+                  matInput
+                  type="text"
+                  placeholder="Categoria Producto"
+                  formControlName="categoria_producto"
+                />
+                <mat-error *ngIf="form.controls.categoria_producto.hasError('required')">
+                    Este Campo es obligatorio
+                </mat-error>
+                
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="d-block">
+              <mat-label>ID Categoria</mat-label>
+              <input 
+                matInput
+                type="number"
+                placeholder="ID"
+                formControlName="idCategory"
+              />
+              <mat-error *ngIf="form.controls.costo_producto.hasError('required')">
+                  Este Campo es obligatorio
+              </mat-error> 
+              
+          </mat-form-field>
+          -->
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Elije la categoría</mat-label>
+                <mat-select formControlName="category" name="category">
+                  <mat-option *ngFor="let categoria of categoriasid" [value]="categoria">
+                    {{categoria.nombre_categoria}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="d-block">
+                <mat-label>Costo Producto</mat-label>
+                <input 
+                  matInput
+                  type="number"
+                  placeholder="S/."
+                  formControlName="costo_producto"
+                />
+                <mat-error *ngIf="form.controls.costo_producto.hasError('required')">
+                    Este Campo es obligatorio
+                </mat-error>
+                
+            </mat-form-field>
+  
+            <button mat-button routerLink="/productos">Cancelar</button>
+  
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              class="ms-2"
+              [disabled]="frmLibro.invalid"
+            >
+             Guardar
+            </button>
+  
+        </form>
+    </div>
+  </div>
+  
+  
+  
+  

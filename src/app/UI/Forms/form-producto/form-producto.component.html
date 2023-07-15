@@ -1,0 +1,50 @@
+<div class="container" style="border: 1px solid #030303; padding: 10px;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form (ngSubmit)="save()" autocomplete="off" [formGroup]="form" #frmLibro="ngForm">
+        <div class="form-row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="d-block">
+              <mat-label>Nombre Producto</mat-label>
+              <input matInput type="text" placeholder="Nombre Producto" formControlName="nombre_producto" />
+              <mat-error *ngIf="form.controls.nombre_producto.hasError('required')">
+                Este Campo es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Elije la categoría</mat-label>
+              <mat-select formControlName="category" name="category">
+                <mat-option *ngFor="let categoria of categoriasid" [value]="categoria">
+                  {{categoria.nombre_categoria}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="d-block">
+              <mat-label>Costo Producto</mat-label>
+              <input matInput type="number" placeholder="S/." formControlName="costo_producto" />
+              <mat-error *ngIf="form.controls.costo_producto.hasError('required')">
+                Este Campo es obligatorio
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <button mat-button routerLink="/productos">Cancelar</button>
+
+          <button mat-raised-button color="primary" type="submit" class="ms-2" [disabled]="frmLibro.invalid">
+            Guardar
+          </button>
+          <img class="logo" src="https://bmlicores.com/wp-content/uploads/2021/02/Promo-1.png" alt="PYASHOP">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

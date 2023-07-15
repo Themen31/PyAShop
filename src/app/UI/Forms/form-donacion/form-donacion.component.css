@@ -1,0 +1,10 @@
+.title-carrito{
+    font-size: 40px;
+    font-family: "Teko";
+    position: center;
+      flex: 100%;
+      display: center;
+      padding-left: 100px;
+      border-radius: 25px;
+      background-color: #F3F3F3;
+}

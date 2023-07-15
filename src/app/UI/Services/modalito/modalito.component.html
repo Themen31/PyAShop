@@ -1,0 +1,36 @@
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+    <!---
+      <div class="d-flex">
+        <img src="../../../assets/zyro-image.png" height="400" width="400" alt="libros">
+      </div> 
+    -->        
+       <h4 class="modal-title">¿Desea hacer una donacion?</h4>
+        
+      </div>
+
+     <div class="modal-body">
+       <p>¡Todo el dinero recaudado será destinado a la plantación de arboles!</p>
+
+       <form (ngsubmit)="onCloseHandled()" autocomplete="off" [formGroup]="form" #frmLibro="ngForm">
+
+        Puedes ingresar desde S/.0.1<mat-form-field appearance="outline" class="d-block">
+            <mat-label>Coloca aquí tu aporte :)</mat-label>
+            <input matInput type="number" min="0.1" step="0.1" max="15" placeholder="Monto a Donar" formControlName="montoDonar"/>
+        </mat-form-field>
+    
+      <div class="modal-footer">
+        <button mat-button type="submit" (click)="hack()">Ahora Noㅤ <mat-icon>favorite_border</mat-icon></button>
+    
+        <button mat-raised-button color="succes" type="submit" class="btn btn-success" (click)="onCloseHandled()" [disabled]="frmLibro.invalid">Donarㅤ <mat-icon>favorite</mat-icon></button>
+      </div>
+
+    </form>
+
+     </div>
+   </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

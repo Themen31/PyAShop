@@ -1,0 +1,13 @@
+<section class="login-box" style="border: 1px solid black; width:850px; height: 700px;">
+    <h1 class="bienvenida" style="margin-bottom: 20px;">Inicia Sesión en PYASHOP</h1>
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+        <input type="email" name="correo" [(ngModel)]="usuario.correoUsuario" class="form-control" placeholder="Correo" required autofocus>
+        <input type="password" name="contrasena" [(ngModel)]="usuario.contrasenaUsuario" class="form-control" placeholder="Contraseña">
+        <p class="danger">{{msg}}</p>
+
+        <input type="submit" value="Iniciar Sesión" required>
+    </form>
+
+    <a class="registrate" routerLink="../register">Regístrate aquí</a>
+        <img class="logo" src="https://bmlicores.com/wp-content/uploads/2021/02/Promo-1.png" alt="PYASHOP">
+</section>

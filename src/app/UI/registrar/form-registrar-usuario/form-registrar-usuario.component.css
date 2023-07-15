@@ -1,0 +1,124 @@
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .register-box {
+    width: 70%;
+    height: 75%;
+    position: relative;
+    background-color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .register-box input[type="email"],
+  .register-box input[type="text"],
+  .register-box input[type="password"] {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    background-color: #EFEFEF;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  
+  .register-box input::placeholder {
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .danger {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .register-box .row {
+    display: flex;
+    margin-top: 5px;
+    text-align: start;
+    padding: 0px 40px;
+  }
+  
+  .register-box .col-1 {
+    flex: 10%;
+    margin-top: 5px;
+  }
+  
+  .register-box .submit-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    width: 260px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #000000;
+    border-radius: 0px;
+    margin-top: 0px;
+    color: white;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .register-box .submit-button:hover {
+    background-color: #42413f;
+  }
+  
+  .register-box .inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+  }
+  
+  .register-box .cuenta {
+    display: inline;
+    font-weight: 50;
+  }
+  
+  .register-box .login {
+    margin-left: 10px;
+    color: black;
+    font-weight: 50;
+  }
+  
+  .register-box .login:hover {
+    color: #ebac24;
+  }
+  
+.logo{
+    margin-bottom: 20px;
+}
+
+.cuenta1 {
+    padding: 15px;
+    font-family: "Audiowide", sans-serif;
+    text-transform: uppercase;
+    animation: moveText 1s infinite alternate;
+  }
+  
+  @keyframes moveText {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }

@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 mx-auto">
+      <form
+        (ngSubmit)="save()"
+        autocomplete="off"
+        [formGroup]="form"
+        #frmLibro="ngForm"
+      >
+
+        <mat-form-field appearance="outline" class="d-block">
+          <mat-label>Nombre Para el arbolito</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Nombre Solicitud"
+            formControlName="nombre_solicitud"
+          />
+          <mat-error *ngIf="form.controls.nombre_solicitud.hasError('required')">
+            Este Campo es obligatorio
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Elije el Estado Solicitud</mat-label>
+          <mat-select formControlName="estadoSolicitud" name="estadoSolicitud">
+            <mat-option *ngFor="let estadoSolicitud of estadoSolicitudid" [value]="estadoSolicitud">
+              {{estadoSolicitud.nombreEstadoS}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline" class="d-block">
+          <mat-label>Distrito</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Lugar"
+            formControlName="distrito"
+          />
+          <mat-error *ngIf="form.controls.distrito.hasError('required')">
+            Este Campo es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="d-block">
+          <mat-label>Solicitud donación</mat-label>
+          <input
+            matInput
+            type="Solicitud"
+            placeholder="Lugar"
+            formControlName="solicitud_donacion"
+          />
+          <mat-error *ngIf="form.controls.distrito.hasError('required')">
+            Este Campo es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-button routerLink="/user/misdonaciones" type="button">Cancelar</button>
+
+        <button mat-raised-button color="primary" type="submit" class="ms-2" [disabled]="frmLibro.invalid">
+          Guardar
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>

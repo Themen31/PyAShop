@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-offset-3 mx-auto">
+        <div class="d-flex justify-content-center">
+            <div class="form-container">
+                <form (ngsubmit)="save()" autocomplete="off" [formGroup]="form" #frmLibro="ngForm">
+                    <mat-form-field appearance="outline" class="d-block">
+                        <mat-label>Descuento de oferta deseado</mat-label>
+                        <input matInput type="number" min="1" max="99" placeholder="Descuento deseado"
+                            formControlName="dsctOfertaDeseado" />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Elije el producto</mat-label>
+                        <mat-select formControlName="producto" name="producto">
+                            <mat-option *ngFor="let productos of productosid" [value]="productos">
+                                {{productos.nombre_producto}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="form.controls.producto.hasError('required')">
+                            Este Campo es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="d-flex justify-content-center mt-3">
+                        <button mat-button routerLink="/admin/ofertas">Cancelarㅤ <mat-icon> cancel_presentation</mat-icon>
+                        </button>
+
+                        <button mat-raised-button color="primary" type="submit" class="ms-2"
+                            [disabled]="frmLibro.invalid" (click)="save()">Guardarㅤ <mat-icon>save_alt</mat-icon></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

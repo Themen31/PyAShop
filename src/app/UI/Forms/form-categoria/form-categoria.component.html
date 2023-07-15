@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <form
+              (ngSubmit)="save()"
+              autocomplete="off"
+              [formGroup]="form"
+              #frmLibro="ngForm"
+          >
+
+              <mat-form-field appearance="outline" class="d-block">
+                  <mat-label>Nombre Categoría</mat-label>
+                  <input
+                      matInput
+                      type="text"
+                      placeholder="Nombre Categoría"
+                      formControlName="nombre_categoria"
+                  />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="d-block">
+                  <mat-label>Descripción Categoría</mat-label>
+                  <input
+                      matInput
+                      type="text"
+                      placeholder="Descripción Categoría"
+                      formControlName="descripcion_categoria"
+                  />
+                  <mat-error *ngIf="form.controls.descripcion_categoria.hasError('required')">
+                      Este Campo es obligatorio
+                  </mat-error>
+              </mat-form-field>
+
+              <div class="text-center">
+                  <button mat-button routerLink="/categorias">Cancelar</button>
+
+                  <button
+                      mat-raised-button
+                      color="primary"
+                      type="submit"
+                      class="ms-2"
+                      [disabled]="frmLibro.invalid"
+                  >
+                      Guardar
+                  </button>
+              </div>
+
+          </form>
+      </div>
+  </div>
+</div>
+
+  
+  

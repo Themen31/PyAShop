@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Audiowide", sans-serif;
+}
+
+.login-box {
+    width: 70%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 50px 30px;
+    background-color: #ffffff;
+    display: grid;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+.login-box .logo{
+    padding-top: 2px;
+    height: 112%;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"]{
+    font-family: 'Montserrat', sans-serif;
+    width: 768px;
+    height: 50px;
+    outline: none;
+    background-color: #EFEFEF;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    padding-left: 20
+    px;
+    box-sizing: border-box;
+}
+
+.login-box input::placeholder{
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.danger{
+    color:rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.login-box input[type="submit"]{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+    width: 260px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0px;
+    margin-top:0px;
+    color:white;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover{
+    background-color: #42413f;
+}
+
+.row{
+    display: flex;
+    margin-top: 5px;
+    text-align: start;
+    padding: 0px 40px;
+}
+
+.col-1{
+    flex: 10%;
+    margin-top: 5px;
+}
+
+.col-2{
+    flex: 10%;
+    text-align: center;
+}
+
+.restablecer{
+    color: black;
+    font-weight: 70;
+}
+
+.cuenta{
+    display: inline;
+    font-weight: 50;
+}
+
+
+.registrate{
+    margin-left: 10px;
+    color: black;
+    font-weight: 50;
+}
+
+p{
+    margin: 5px 0px;
+}
+
+a:hover{
+    color: #ebac24;
+}
+
+@media only screen and (max-width: 0px){
+    body{
+        font-size: 5px;
+    }
+
+    .login-box .logo{
+        height: 0px;
+    }
+    
+    .login-box{
+        width: 10px;
+        height: 0px;
+    }
+
+    .login-box input[type="email"],
+    .login-box input[type="password"]{
+        width: 340px;
+        height: 40px;
+    }
+    .login-box input[type="submit"]{
+        width: 50%;
+        height: 40px;
+        font-weight: 60;
+        font-size: 20px;
+    }
+
+    .col-2{
+        flex: 10%;
+    }
+
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 100%; 
+    height: auto;
+  }
+
+.mat-typography{
+    margin-bottom: 100px;
+}
+
+.bienvenida {
+    margin-bottom: 20px;
+    font-family: "Audiowide", sans-serif;
+    text-transform: uppercase;
+    animation: moveText 1s infinite alternate;
+  }
+  
+  @keyframes moveText {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
